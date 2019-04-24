@@ -1,41 +1,28 @@
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
     app: nginx
-    stack: prod
-  name: nginx-deployment-prod
-  namespace: default
+  name: nginx-deployment
 spec:
-  progressDeadlineSeconds: 600
-  replicas: 1
-  revisionHistoryLimit: 10
+  replicas: 3
   selector:
     matchLabels:
       app: nginx
-  strategy:
-    rollingUpdate:
-      maxSurge: 25%
-      maxUnavailable: 25%
-    type: RollingUpdate
   template:
     metadata:
       labels:
         app: nginx
-        ver: 1.2
     spec:
       containers:
-      - image: nginx:1.7.9
-        imagePullPolicy: IfNotPresent
-        name: nginx
-        ports:
-        - containerPort: 80
-          protocol: TCP
-        resources: {}
-        terminationMessagePath: /dev/termination-log
-        terminationMessagePolicy: File
-      dnsPolicy: ClusterFirst
-      restartPolicy: Always
-      schedulerName: default-scheduler
-      securityContext: {}
-      terminationGracePeriodSeconds: 30
+        - image: gcr.io/my-images/nginx # possible artifact
+          name: nginx
+          ports:
+            - containerPort: 80
+          volumeMounts:
+            - mountPath: /opt/config
+              name: my-config-map
+      volumes:
+        - configMap:
+            name: configmap             # possible artifact
+          name: my-config-map
