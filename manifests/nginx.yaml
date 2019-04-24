@@ -39,22 +39,3 @@ spec:
       schedulerName: default-scheduler
       securityContext: {}
       terminationGracePeriodSeconds: 30
----
-apiVersion: v1
-kind: Service
-metadata:
-  labels:
-    app: nginx
-    stack: prod
-  name: nginx-prod
-  namespace: default
-spec:
-  ports:
-  - name: web
-    port: 80
-    protocol: TCP
-    targetPort: 80
-  selector:
-    app: nginx
-  sessionAffinity: None
-  type: NodePort
