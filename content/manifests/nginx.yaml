@@ -23,10 +23,10 @@ spec:
       creationTimestamp: null
       labels:
         app: nginx
-        ver: ${parameters['ci_versions']}
+        ver: 1.1
     spec:
       containers:
-      - image: nginx:${parameters['ci_versions']}
+      - image: nginx:1.7.9
         imagePullPolicy: IfNotPresent
         name: nginx
         ports:
