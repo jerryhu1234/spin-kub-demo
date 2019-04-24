@@ -22,7 +22,7 @@ spec:
     metadata:
       labels:
         app: nginx
-        ver: ${parameters["ci_version"]}
+        ver: 1.2
     spec:
       containers:
       - image: nginx:1.7.9
