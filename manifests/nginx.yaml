@@ -15,7 +15,7 @@ spec:
         app: nginx
     spec:
       containers:
-        - image: gcr.io/my-images/nginx # possible artifact
+        - image: nginx
           name: nginx
           ports:
             - containerPort: 80
