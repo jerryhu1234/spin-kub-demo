@@ -19,10 +19,3 @@ spec:
           name: nginx
           ports:
             - containerPort: 80
-          volumeMounts:
-            - mountPath: /opt/config
-              name: my-config-map
-      volumes:
-        - configMap:
-            name: configmap             # possible artifact
-          name: my-config-map
