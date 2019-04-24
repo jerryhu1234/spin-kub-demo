@@ -8,7 +8,11 @@ metadata:
   namespace: default
 spec:
   progressDeadlineSeconds: 600
+<<<<<<< HEAD:nginx.yaml
   replicas: 2
+=======
+  replicas: 1
+>>>>>>> d253c6dff21e74489687e32d28286c4e4c417465:content/manifests/nginx.yaml
   revisionHistoryLimit: 10
   selector:
     matchLabels:
@@ -22,6 +26,10 @@ spec:
     metadata:
       labels:
         app: nginx
+<<<<<<< HEAD:nginx.yaml
+=======
+        ver: ${parameters["ci_version"]}
+>>>>>>> d253c6dff21e74489687e32d28286c4e4c417465:content/manifests/nginx.yaml
     spec:
       containers:
       - image: nginx:1.7.9
