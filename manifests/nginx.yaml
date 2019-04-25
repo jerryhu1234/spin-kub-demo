@@ -15,7 +15,7 @@ spec:
         app: nginx
     spec:
       containers:
-        - image: ${parameters['ver']}
+        - image: nginx:${parameters['ver']}
           name: nginx
           ports:
             - containerPort: 80
