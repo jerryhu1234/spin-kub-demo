@@ -12,10 +12,10 @@ spec:
   template:
     metadata:
       labels:
-        app: bitnami/nginx
+        app: nginx
     spec:
       containers:
-        - image: bitnami/nginx
+        - image: index.docker.io/library/nginx:1.7.9
           name: nginx
           ports:
             - containerPort: 80
