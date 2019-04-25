@@ -15,7 +15,7 @@ spec:
         app: bitnami/nginx
     spec:
       containers:
-        - image: nginx
+        - image: bitnami/nginx
           name: nginx
           ports:
             - containerPort: 80
