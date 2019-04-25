@@ -15,7 +15,7 @@ spec:
         app: nginx
     spec:
       containers:
-        - image: '${ci_version}'
+        - image: ${parameters['ci_versions']}
           name: nginx
           ports:
             - containerPort: 80
