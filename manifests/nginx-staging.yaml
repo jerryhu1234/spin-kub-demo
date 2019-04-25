@@ -8,7 +8,7 @@ metadata:
   labels:
     app: nginx-cm
   name: nginx-cm-${parameters['ver']}
-  namespace: default
+  namespace: staging
 apiVersion: v1
 data:
   config.json: |-
@@ -20,6 +20,7 @@ metadata:
   labels:
     app: nginx
   name: nginx-deployment
+  namespace: staging
 spec:
   replicas: 2
   selector:
@@ -70,7 +71,7 @@ metadata:
     app: nginx
     stack: prod
   name: nginx-prod
-  namespace: default
+  namespace: staging
 spec:
   ports:
   - name: web
