@@ -15,7 +15,7 @@ spec:
         app: nginx
     spec:
       containers:
-        - image: index.docker.io/library/nginx:1.7.9
+        - image: index.docker.io/library/nginx:${parameters['ci_version']}
           name: nginx
           ports:
             - containerPort: 80
