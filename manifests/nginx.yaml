@@ -1,3 +1,15 @@
+---
+kind: ConfigMap
+metadata:
+  labels:
+    app: nginx-cm
+  name: nginx-cm-${parameters['ver']}
+  namespace: default
+apiVersion: v1
+data:
+  config.json: |-
+    {}
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -19,6 +31,13 @@ spec:
           name: nginx
           ports:
             - containerPort: 80
+          volumeMounts:
+            - mountPath: /opt/config
+              name: my-config-map
+      volumes:
+        - configMap:
+            name: nginx-cm-${parameters['ver']}
+          name: my-config-map
 ---
 apiVersion: v1
 kind: Service
