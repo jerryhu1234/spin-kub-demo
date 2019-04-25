@@ -4,7 +4,7 @@ metadata:
   labels:
     app: nginx-cm
   name: nginx-cm-${parameters['ver']}
-  namespace: default
+  namespace: ${parameters['ns']}
 apiVersion: v1
 data:
   config.json: |-
@@ -16,6 +16,7 @@ metadata:
   labels:
     app: nginx
   name: nginx-deployment
+  namespace: ${parameters['ns']}
 spec:
   replicas: 1
   selector:
@@ -66,7 +67,7 @@ metadata:
     app: nginx
     stack: prod
   name: nginx-prod
-  namespace: default
+  namespace: ${parameters['ns']}
 spec:
   ports:
   - name: web
