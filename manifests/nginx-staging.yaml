@@ -33,6 +33,7 @@ spec:
     metadata:
       labels:
         app: nginx
+        stack: staging
     spec:
       containers:
         - image: nginx:${parameters['ver']}
@@ -83,5 +84,6 @@ spec:
     targetPort: 80
   selector:
     app: nginx
+    stack: staging
   sessionAffinity: None
   type: NodePort
