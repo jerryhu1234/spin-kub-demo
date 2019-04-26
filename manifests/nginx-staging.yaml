@@ -8,7 +8,7 @@ kind: ConfigMap
 metadata:
   labels:
     app: nginx-cm
-  name: nginx-cm-${parameters['ver']}
+  name: nginx-cm-staging-${parameters['ver']}
   namespace: staging
 apiVersion: v1
 data:
@@ -20,7 +20,7 @@ kind: Deployment
 metadata:
   labels:
     app: nginx
-  name: nginx-deployment
+  name: nginx-deployment-staging
   namespace: staging
 spec:
   replicas: 1
@@ -62,7 +62,7 @@ spec:
               name: my-config-map
       volumes:
         - configMap:
-            name: nginx-cm-${parameters['ver']}
+            name: nginx-cm-staging-${parameters['ver']}
           name: my-config-map
 ---
 apiVersion: v1
@@ -71,7 +71,7 @@ metadata:
   labels:
     app: nginx
     stack: prod
-  name: nginx-prod
+  name: nginx-prod-staging
   namespace: staging
 spec:
   ports:
