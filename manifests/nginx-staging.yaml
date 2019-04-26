@@ -8,6 +8,7 @@ kind: ConfigMap
 metadata:
   labels:
     app: nginx-cm
+    stack: staging
   name: nginx-cm-staging-${parameters['ver']}
   namespace: staging
 apiVersion: v1
@@ -20,6 +21,7 @@ kind: Deployment
 metadata:
   labels:
     app: nginx
+    stack: staging
   name: nginx-deployment-staging
   namespace: staging
 spec:
@@ -70,8 +72,8 @@ kind: Service
 metadata:
   labels:
     app: nginx
-    stack: prod
-  name: nginx-prod-staging
+    stack: staging
+  name: nginx-staging
   namespace: staging
 spec:
   ports:
