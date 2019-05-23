@@ -1,2 +1,2 @@
-FROM kshatrix/canary-demo
-RUN echo 'build canary 0.4'
+FROM gcr.io/spinnaker-marketplace/sampleapp
+RUN echo 'build canary 0.5'
