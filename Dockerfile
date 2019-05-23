@@ -1,2 +1,2 @@
 FROM gcr.io/spinnaker-marketplace/sampleapp
-RUN echo 'build canary 0.6'
+RUN echo 'build canary 0.7'
