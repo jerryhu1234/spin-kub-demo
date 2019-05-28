@@ -36,7 +36,7 @@ failedJobsHistoryLimit: 5
 # persistentVolumeClaim: <existing-PVC>
 
 persistence:
-  enabled: false
+  enabled: true
   size: 8Gi
   accessMode: ReadWriteOnce
   ## If defined, storageClassName: <storageClass>
