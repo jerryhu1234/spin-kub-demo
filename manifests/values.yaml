@@ -37,7 +37,7 @@ failedJobsHistoryLimit: 5
 
 persistence:
   enabled: true
-  size: 10Gi
+  size: 8Gi
   accessMode: ReadWriteOnce
   ## If defined, storageClassName: <storageClass>
   ## If set to "-", storageClassName: "", which disables dynamic provisioning
